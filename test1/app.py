@@ -4,10 +4,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    username = '成歩堂龍ノ介'
-    age = '20'
+    username = '成歩堂龍一'
+    age = '25'
     email = 'naruhodo@example.com'
-    return render_template('card.html',username=username,age=age,email=email)
+    like = 'リンゴとウインナー'
+    job = '弁護士'
+    return render_template('card.html',
+                            username=username,
+                            age=age,
+                            email=email,
+                            like=like,
+                            job=job)
 
 if __name__ == '__main__':
     app.debug = True
