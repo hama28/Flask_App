@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>webstorage</title>
+  </head>
+  <body>
+    <textarea id="tbox" rows="5" cols="60"></textarea>
+    <script type="text/javascript">
+      // textareaのオブジェクトを取得
+      const tbox = document.getElementById("tbox");
+      // すでにテキストが保存されていれば復元
+      if (localStorage["tbox"]) {
+        tbox.value = localStorage["tbox"];
+      }
+      // キーが押された時にテキストを保存
+      tbox.onkeydown = function (e) {
+        localStorage["tbox"] = tbox.value;
+      };
+    </script>
+  </body>
+</html>
