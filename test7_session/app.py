@@ -1,10 +1,12 @@
 from flask import Flask, request, session, redirect
 app = Flask(__name__)
+# セッション情報を暗号化するためのキーを設定（適当な値）
 app.secret_key = '9KStWezC'
 
 
 @app.route('/')
 def index():
+    # 入力フォームの作成
     return """
     <html><body>
     <form action="/setname" method="GET">
@@ -16,10 +18,13 @@ def index():
 
 @app.route('/setname')
 def setname():
+    # GETの値を取得
     name = request.args.get('username')
     if name is None:
         return redirect('/')
+    # セッションに値を保存
     session['name'] = name
+    # 他のページにリダイレクト
     return redirect('morning')
 
 
@@ -33,8 +38,10 @@ def getLinks():
 
 @app.route('/morning')
 def morning():
+    # セッションにnameがあるかチェック
     if not ('name' in session):
         return redirect('/')
+    # セッションからユーザー名を取得
     name = session['name']
     return """
     <h1>{0}さん、おはようございます！</h1>{1}
