@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/pure-min.css" />
+    <link rel="stylesheet" href="static/style.css?v=0220" />
+    <title>login</title>
+</head>
+<body>
+    <div class="content">
+        <!-- 書き込みフォーム -->
+        <h1><a id="menu-switch" href="#">≡</a>
+            会員制の掲示板 - {{ user }}</h1>
+        <!-- メニュー -->
+        <div id="menu" class="pure-menu pure-u-2-5">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <a href="/logout" class="pure-menu-link">ログアウト</a>
+                </li>
+            </ul>
+        </div>
+        <form action="/write" method="POST" class="pure-form pure-form-stacked">
+            <textarea name="ta" rows="4" cols="60"></textarea>
+            <button type="submit" class="pure-button pure-button-primary">書き込む</button>
+        </form>
+        <!-- 掲示板のログを表示 -->
+        {% for i in data %}
+            <div class="box">
+                <p class="box_h">{{ i.name }} - {{ i.date }}</p>
+                <p>{{ i.text }}</p>
+            </div>
+        {% endfor %}
+        <!-- ≡メニューの開閉処理 -->
+        <script type="text/javascript">
+        function $(id) { return document.querySelector(id) }
+        $("#menu-switch")._b = false
+        $("#menu-switch").onclick = ()=>{
+            $("#menu-switch")._b = !$("#menu-switch")._b
+            if ($("#menu-switch")._b) {
+                $("#menu").style.display = "block"
+            } else {
+                $("#menu").style.display = "none"
+            }
+        }
+        </script>
+    </div>
+</body>
+</html>
