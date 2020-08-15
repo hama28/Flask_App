@@ -1,4 +1,3 @@
-from typing import Tuple
 from flask import Flask, redirect, render_template
 from flask import request, Markup
 import os, time
@@ -86,7 +85,7 @@ def add_staticfile():
 def staticfile_cp(fname):
     path = os.path.join(app.root_path, 'static', fname)
     mtime = str(int(os.stat(path).st_mtime))
-    return '/static' + fname + '?v=' + str(mtime)
+    return '/static/' + fname + '?v=' + str(mtime)
 
 # 改行を有効にするフィルタの追加
 @app.template_filter('linebreak')

@@ -31,7 +31,7 @@ def get_id():
 
 # 全ユーザーの情報を取得
 def get_allusers():
-    return [u for u in USER_LOGIN_LIST]
+    return [ u for u in USER_LOGIN_LIST ]
 
 # ログアウトする
 def try_logout():
