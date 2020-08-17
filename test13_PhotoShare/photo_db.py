@@ -14,7 +14,7 @@ def get_albums(user_id):
     return select('SELECT * FROM albums WHERE user_id=?', user_id)
 
 # 特定のアルバム情報を得る
-def get_albums(album_id):
+def get_album(album_id):
     a = select('SELECT * FROM albums WHERE album_id=?', album_id)
     if len(a) == 0:
         return None
