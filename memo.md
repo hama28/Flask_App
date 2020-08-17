@@ -28,3 +28,24 @@ vscode-gemfile
 vscode-icons
 zenkaku
 テキスト校正くん
+
+-------
+Anaconda Extension Pack
+Debugger for Java
+ES7 React/Redux/GraphQL/React-Native snippets
+Excel Viewer
+HTML CSS Support
+HTML Snippets
+Java Extension Pack
+Java Test Runner
+Language Support for Java(TM) by Red Hat
+Maven for Java
+MySQL
+MySQL Syntax
+PHP Debug
+PHP Extension Pack
+PHP IntelliSense
+Project Manager for Java
+Rainbow CSV
+React Native Tools
+YAML
