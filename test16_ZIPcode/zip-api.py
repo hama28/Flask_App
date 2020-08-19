@@ -12,7 +12,7 @@ app = Flask(__name__)
 # ルートにアクセスがあったとき
 @app.route('/')
 def indes():
-    with open(form_path) as f:
+    with open(form_path, encoding='UTF-8') as f:
         return f.read()
 
 # APIにアクセスがあったとき
