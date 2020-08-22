@@ -21,7 +21,7 @@ def read_file(page_name, html=False):
     return ""
 
 # ファイルへ書き込む
-def write_files(page_name, body):
+def write_file(page_name, body):
     path = get_filename(page_name)
     with open (path, "wt", encoding="utf-8") as f:
         f.write(body)
